@@ -1,0 +1,19 @@
+
+<div  class="d-flex justify-cpntent-center">
+    
+    <img 
+        [src]="urlLazy"
+        [alt] ="textoAlternativo"
+        class="card-img-top animate__animated animate__fadeIn"
+        (load)="onLoad()"
+        [ngStyle]="{display: loadImage ? '' : 'none' }"/>
+
+    <img 
+        *ngIf="! loadImage"
+            src="assets/loader.svg"
+            height="35"
+            width="35"
+            class="mt-3"    
+    />     
+
+</div>
